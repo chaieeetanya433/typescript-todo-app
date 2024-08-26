@@ -20,7 +20,7 @@ myForm.onsubmit = (e: SubmitEvent) => {
   const todo: Todo = {
     title: todoInput.value,
     isCompleted: false,
-    id: String(Math.random() * 100),
+    id: (Math.random() * 100).toString(),
   };
 
   todos.push(todo);
@@ -32,7 +32,7 @@ myForm.onsubmit = (e: SubmitEvent) => {
 }
 
 //create div with input checkbox for a todo
-const generateTodoItem = (title: string, isCompleted: boolean, id: String) => {
+const generateTodoItem = (title: string, isCompleted: boolean, id: string) => {
   const todo: HTMLDivElement = document.createElement("div")
   todo.className = "todo";
 
@@ -49,7 +49,7 @@ const generateTodoItem = (title: string, isCompleted: boolean, id: String) => {
   }
 
   //creating p for title
-  const paragraph: HTMLParagraphElement = document.createElement("P")
+  const paragraph: HTMLElement = document.createElement("P")
   paragraph.innerText = title;
   paragraph.className = isCompleted ? "textCut" : "";
 
